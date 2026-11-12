@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muntagna — A climb up Mount Etna</title>
+<meta name="description" content="Muntagna — a precision platformer about climbing Mount Etna, by Paw Software Entertainment. A girl, her grandfather's ashes, and a promise: all the way up to the crater.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muntagna — A climb up Mount Etna">
+<meta property="og:description" content="A precision platformer about climbing Mount Etna, by Paw Software Entertainment.">
+<meta property="og:url" content="https://pawsoftwareent.github.io/muntagna/">
+<meta property="og:image" content="https://pawsoftwareent.github.io/muntagna/img/preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#120d1f">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+  :root{
+    --bg:#120d1f; --bg2:#181129; --card:#211838; --line:#3a2c5c;
+    --text:#f8eedd; --muted:#b8aacf; --gold:#f0a63c; --gold2:#ffd58a; --red:#dc4631; --rose:#c8607a;
+    --serif:Caladea,Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+  a{color:var(--gold2);text-decoration:none}
+  a:hover{color:#fff}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:6px}
+  img{max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(18,13,31,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(58,44,92,.8)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.35rem;color:var(--text);letter-spacing:.01em}
+  .brand:hover{color:var(--gold2)}
+  .links{display:flex;gap:22px;align-items:center}
+  .links a{color:var(--muted);font-size:.92rem}
+  .links a:hover{color:var(--text)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .lang button{background:none;border:0;color:var(--muted);padding:5px 12px;font:600 .78rem Inter,system-ui,sans-serif;cursor:pointer}
+  .lang button.on{background:var(--gold);color:#22130a}
+  @media(max-width:700px){.links a{display:none}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;justify-content:center;text-align:center;overflow:hidden;background:#1b1433}
+  .hero-art{position:absolute;inset:0}
+  .hero-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:36% 50%}
+  .hero-shade{position:absolute;inset:0;background:
+    radial-gradient(ellipse 60% 30% at 50% 22%,rgba(18,13,31,.5),transparent 72%),
+    linear-gradient(rgba(18,13,31,.55) 0,transparent 24%,transparent 52%,rgba(18,13,31,.82) 84%,var(--bg) 100%)}
+  /* the name over the sky, the rest at the picture's dark foot: the Mountain stays clear between them */
+  .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:space-between;gap:40px;
+    min-height:100vh;min-height:100svh;padding:clamp(88px,13vh,150px) 20px clamp(40px,7vh,72px);max-width:820px}
+  .eyebrow{color:var(--muted);letter-spacing:.28em;font-size:.76rem;text-transform:uppercase}
+  h1{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(3.6rem,13.5vw,8.4rem);line-height:1;margin:.16em 0 .12em;color:#fff1d6;
+     text-shadow:0 6px 0 rgba(20,10,40,.55),0 0 46px rgba(255,170,110,.45)}
+  .sub{color:var(--gold2);letter-spacing:.3em;font-size:clamp(.78rem,2.3vw,1rem);font-weight:600;text-transform:uppercase}
+  .tag{max-width:640px;margin:0 auto 24px;color:#efe6f6;font-size:1.08rem;text-shadow:0 1px 10px rgba(18,13,31,.9)}
+  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:600;border:1px solid rgba(248,238,221,.35);color:var(--text);background:rgba(18,13,31,.45);transition:transform .15s,background .15s}
+  .btn.primary{background:var(--gold);border-color:var(--gold);color:#22130a;box-shadow:0 0 28px rgba(240,166,60,.35)}
+  .btn:hover{transform:translateY(-1px);color:var(--text);background:rgba(58,44,92,.7)}
+  .btn.primary:hover{background:var(--gold2);color:#22130a}
+  /* phones: the picture wide enough for both Agata and the summit, the words under it */
+  @media(max-width:700px){
+    .hero{display:block;min-height:0;background:var(--bg)}
+    .hero-art,.hero-shade{inset:0 0 auto 0;height:120vw}
+    .hero-art img{object-position:40% 50%}
+    .hero-shade{background:linear-gradient(rgba(18,13,31,.6) 0,transparent 30%,transparent 62%,var(--bg) 100%)}
+    .hero-inner{display:block;min-height:0;padding:72px 16px 44px}
+    .hero-inner>div:first-child{min-height:calc(120vw - 72px - 44px)}
+    .eyebrow{letter-spacing:.14em;font-size:.62rem}
+    h1{font-size:clamp(3rem,15vw,3.6rem);margin:.1em 0 .08em}
+    .sub{letter-spacing:.24em}
+  }
+  .status{display:inline-block;margin-top:22px;font-size:.8rem;color:var(--gold2);border:1px solid rgba(255,213,138,.4);padding:4px 12px;border-radius:999px;background:rgba(18,13,31,.55)}
+
+  /* SECTIONS */
+  section{padding:96px 0}
+  .alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.9rem,4.2vw,2.6rem);line-height:1.15;margin-bottom:18px}
+  h2::after{content:"";display:block;width:56px;height:3px;border-radius:2px;margin-top:12px;background:var(--gold)}
+  .lead{color:var(--muted);max-width:680px;font-size:1.05rem}
+  .lead em{color:var(--text);font-style:italic}
+
+  .story{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+  .story p+p{margin-top:14px}
+  blockquote{margin-top:26px;padding:6px 0 6px 18px;border-left:3px solid var(--red);font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.4;color:var(--text)}
+  blockquote cite{display:block;margin-top:6px;font:500 .85rem Inter,system-ui,sans-serif;font-style:normal;color:var(--muted)}
+  .frame{display:block;border-radius:14px;border:1px solid var(--line);background:var(--card);overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .frame img{display:block;width:100%;height:auto}
+  @media(max-width:860px){.story{grid-template-columns:1fr;gap:32px}}
+
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+  .feat .n{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.5rem;color:var(--gold);line-height:1;margin-bottom:10px}
+  .feat h3{font-size:1.05rem;margin-bottom:6px}
+  .feat p{color:var(--muted);font-size:.94rem}
+  .tech{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .tech span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--muted)}
+
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:36px}
+  .shots.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:16px}
+  .shot{display:block;aspect-ratio:16/9;border-radius:12px;border:1px solid var(--line);background:var(--card);overflow:hidden}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .shot.px img{image-rendering:pixelated}
+  .shot:hover img{transform:scale(1.03)}
+
+  .demo{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:24px 26px}
+  .demo h3{font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.2}
+  .demo p{color:var(--muted);font-size:.98rem}
+  .demo .pill{white-space:nowrap;font-size:.8rem;color:var(--gold2);border:1px solid rgba(255,213,138,.4);padding:4px 12px;border-radius:999px}
+  @media(max-width:700px){.demo{grid-template-columns:1fr;gap:10px}.demo .pill{justify-self:start}}
+
+  /* STUDIO */
+  .studio{text-align:center}
+  .studio img{width:min(380px,80%);height:auto;border-radius:14px;margin:10px auto 22px;display:block;box-shadow:0 0 60px rgba(120,80,200,.25)}
+  .studio p{color:var(--muted);max-width:560px;margin:0 auto 24px}
+  .studio .also{margin-top:26px;font-size:.95rem}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}.shot img,.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Muntagna</a>
+    <div class="links">
+      <a href="#story" data-i18n="nav.story">Story</a>
+      <a href="#game" data-i18n="nav.game">The game</a>
+      <a href="#media" data-i18n="nav.media">Media</a>
+      <a href="#studio" data-i18n="nav.studio">Studio</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" class="on">EN</button><button data-lang="it">IT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <picture class="hero-art">
+    <source media="(max-width:700px)" srcset="img/hero_960.webp">
+    <img src="img/hero.webp" width="1920" height="1080" alt="" fetchpriority="high">
+  </picture>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow" data-i18n="hero.eyebrow">Paw Software Entertainment presents</div>
+      <h1>Muntagna</h1>
+      <div class="sub" data-i18n="hero.sub">A climb up Mount Etna</div>
+    </div>
+    <div>
+      <p class="tag" data-i18n="hero.tag">A girl, her grandfather's ashes, and a promise: all the way up to the crater.</p>
+      <div class="btns">
+        <a class="btn primary" href="#media" data-i18n="hero.cta1">See the game</a>
+        <a class="btn" href="https://github.com/PawSoftwareEnt" target="_blank" rel="noopener" data-i18n="hero.cta2">Follow on GitHub</a>
+      </div>
+      <div class="status" data-i18n="hero.status">● In development — demo coming soon</div>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap story">
+    <div class="reveal">
+      <h2 data-i18n="story.title">The Story</h2>
+      <p class="lead" data-i18n="story.p1">At her foot nobody calls her Etna: she is <em>a Muntagna</em>, the Mountain. Agata promised her grandfather Turi she would take him up there one last time, to the crater. So she sets out from Nicolosi, the town at its foot, with his urn in her backpack.</p>
+      <p class="lead" data-i18n="story.p2">She talks to him as she climbs. On the way are the people who knew him, the places he used to bring her, and a mountain that is very much alive.</p>
+      <blockquote>
+        <span data-i18n="story.quote">“You made me promise I'd take you all the way up there. To the crater.”</span>
+        <cite>Agata</cite>
+      </blockquote>
+    </div>
+    <!-- No data-i18n on the pictures: switching language rewrites those elements. -->
+    <div class="frame reveal"><img src="img/dialogo.webp" width="1280" height="720" loading="lazy" decoding="async"
+      alt="Agata speaks to her grandfather at the gates of Nicolosi, Mount Etna behind the roofs at sunset."></div>
+  </div>
+</section>
+
+<section id="game" class="alt">
+  <div class="wrap">
+    <h2 class="reveal" data-i18n="game.title">The Game</h2>
+    <p class="lead reveal" data-i18n="game.lead">A precision platformer in pixel art, one screen at a time, from the roofs of the town up to the crater.</p>
+    <div class="features">
+      <div class="feat reveal"><div class="n">01</div><h3 data-i18n="feat.1t">Jump, climb, dash</h3><p data-i18n="feat.1d">Pixel-exact controls: a jump you can shape, walls to climb while your grip lasts, and a dash in eight directions.</p></div>
+      <div class="feat reveal"><div class="n">02</div><h3 data-i18n="feat.2t">One room, one idea</h3><p data-i18n="feat.2d">Every screen is made by hand around one thing: quarry slabs that bolt when you step on them, embers that give your dash back in mid-air, fumaroles that throw you upward.</p></div>
+      <div class="feat reveal"><div class="n">03</div><h3 data-i18n="feat.3t">Fall, and go again</h3><p data-i18n="feat.3d">It is hard, and it does not waste your time: you start again at once, in the same room.</p></div>
+      <div class="feat reveal"><div class="n">04</div><h3 data-i18n="feat.4t">A real mountain</h3><p data-i18n="feat.4d">Etna's skyline, as you see it from the south, over every open-air room, and the churches of Nicolosi drawn from photographs.</p></div>
+      <div class="feat reveal"><div class="n">05</div><h3 data-i18n="feat.5t">Worth the detour</h3><p data-i18n="feat.5d">Prickly pears hidden in rooms of their own, Grandpa's postcards, pistachios for Aunt Pina's cake, and one secret in every chapter.</p></div>
+      <div class="feat reveal"><div class="n">06</div><h3 data-i18n="feat.6t">Your way</h3><p data-i18n="feat.6d">In Italian and English, with keyboard or controller, controls you can remap and assists such as infinite lives.</p></div>
+    </div>
+    <div class="tech reveal"><span>Godot Engine</span><span>Pixel art</span><span>Windows · Linux</span><span data-i18n="tech.solo">Indie · Solo dev</span></div>
+  </div>
+</section>
+
+<section id="media">
+  <div class="wrap">
+    <h2 class="reveal" data-i18n="media.title">Media</h2>
+    <p class="lead reveal" data-i18n="media.lead">Screenshots from the first chapter, Nicolosi. More coming soon.</p>
+    <div class="shots">
+      <a class="shot px reveal" href="img/nicolosi.webp" target="_blank" rel="noopener">
+        <img src="img/nicolosi_960.webp" srcset="img/nicolosi_960.webp 960w, img/nicolosi.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="The road into Nicolosi at sunset: the town's sign, low walls of lava stone and Mount Etna over the roofs.">
+      </a>
+      <a class="shot px reveal" href="img/scatto.webp" target="_blank" rel="noopener">
+        <img src="img/scatto_960.webp" srcset="img/scatto_960.webp 960w, img/scatto.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Agata dashes through the air towards an ember, high over the roofs, with Mount Etna behind her.">
+      </a>
+      <a class="shot px reveal" href="img/chiesa.webp" target="_blank" rel="noopener">
+        <img src="img/chiesa_960.webp" srcset="img/chiesa_960.webp 960w, img/chiesa.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="A church of Nicolosi with its bell tower, the priest at its door and the Mountain behind.">
+      </a>
+      <a class="shot px reveal" href="img/cava.webp" target="_blank" rel="noopener">
+        <img src="img/cava_960.webp" srcset="img/cava_960.webp 960w, img/cava.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="A room of the old quarry: a slab of lava stone on its rack, broken glass on the walls, house fronts with lit windows.">
+      </a>
+      <a class="shot px reveal" href="img/faville.webp" target="_blank" rel="noopener">
+        <img src="img/faville_960.webp" srcset="img/faville_960.webp 960w, img/faville.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="Agata in mid-dash between two roofs, two embers glowing ahead of her in the evening sky.">
+      </a>
+      <a class="shot px reveal" href="img/boss.webp" target="_blank" rel="noopener">
+        <img src="img/boss_960.webp" srcset="img/boss_960.webp 960w, img/boss.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="On the roofs at night: an ember sprite burning over the chimneys, with Mount Etna in the distance.">
+      </a>
+    </div>
+    <div class="shots two">
+      <a class="shot px reveal" href="img/piazza.webp" target="_blank" rel="noopener">
+        <img src="img/piazza_960.webp" srcset="img/piazza_960.webp 960w, img/piazza.webp 1920w" sizes="(max-width: 700px) 100vw, 50vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="The square of Nicolosi: the church with its bell tower of lava stone, street lamps, and the Mountain behind.">
+      </a>
+      <a class="shot reveal" href="img/capitolo.webp" target="_blank" rel="noopener">
+        <img src="img/capitolo_960.webp" srcset="img/capitolo_960.webp 960w, img/capitolo.webp 1920w" sizes="(max-width: 700px) 100vw, 50vw"
+          width="1920" height="1080" loading="lazy" decoding="async"
+          alt="The chapter screen: a small 3D model of Nicolosi under the Mountain beside the card of chapter 1.">
+      </a>
+    </div>
+    <div class="demo reveal">
+      <span class="pill" data-i18n="demo.pill">● Coming soon</span>
+      <div>
+        <h3 data-i18n="demo.title">The demo</h3>
+        <p data-i18n="demo.p">The demo holds the whole first chapter, Nicolosi: from the road into town to the last houses. We are testing it now and it will be here soon, for Windows and Linux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="studio" class="alt studio">
+  <div class="wrap reveal">
+    <h2 style="display:inline-block" data-i18n="studio.title">The Studio</h2>
+    <img src="img/paw.webp" width="760" height="507" loading="lazy" decoding="async" alt="Paw Software Entertainment logo">
+    <p data-i18n="studio.p">Paw Software Entertainment is an independent game studio from Sicily. We make games with heart, one pixel — and one paw — at a time.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://www.youtube.com/@PawSoftwareEnt" target="_blank" rel="noopener">YouTube</a>
+      <a class="btn" href="https://github.com/PawSoftwareEnt" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="also"><span data-i18n="studio.also">Also from the studio:</span> <a href="https://pawsoftwareent.github.io/lume/">Lume — The Unlit Lighthouse</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Paw Software Entertainment</span>
+    <span data-i18n="footer.made">Made with Godot</span>
+  </div>
+</footer>
+
+<script>
+const T = {
+  it: {
+    "nav.story":"Storia","nav.game":"Il gioco","nav.media":"Media","nav.studio":"Studio",
+    "hero.eyebrow":"Paw Software Entertainment presenta","hero.sub":"Una salita sull'Etna",
+    "hero.tag":"Una ragazza, le ceneri del nonno e una promessa: fin lassù, al cratere.",
+    "hero.cta1":"Guarda il gioco","hero.cta2":"Seguici su GitHub","hero.status":"● In sviluppo — demo in arrivo",
+    "story.title":"La Storia",
+    "story.p1":"Ai suoi piedi nessuno la chiama Etna: è <em>a Muntagna</em>, la Montagna. Agata ha promesso al nonno Turi di portarlo lassù un'ultima volta, fino al cratere. Così parte da Nicolosi, il paese ai suoi piedi, con l'urna nello zaino.",
+    "story.p2":"Salendo gli parla. Lungo la strada ci sono le persone che lo conoscevano, i posti dove la portava da bambina, e una montagna più viva che mai.",
+    "story.quote":"«Mi hai fatto promettere che ti avrei portato fin lassù. Al cratere.»",
+    "game.title":"Il Gioco",
+    "game.lead":"Un platformer di precisione in pixel art, uno schermo alla volta, dai tetti del paese fino al cratere.",
+    "feat.1t":"Salta, arrampicati, scatta","feat.1d":"Comandi al pixel: un salto da dosare, muri da scalare finché la presa tiene, e uno scatto in otto direzioni.",
+    "feat.2t":"Una stanza, un'idea","feat.2d":"Ogni schermata è fatta a mano attorno a una cosa sola: le lastre della cava che partono appena ci sali, le braci che ridanno lo scatto a mezz'aria, le fumarole che ti lanciano in alto.",
+    "feat.3t":"Cadi e riparti","feat.3d":"È difficile, e non ti fa perdere tempo: riparti subito, dalla stessa stanza.",
+    "feat.4t":"Una montagna vera","feat.4d":"Il profilo dell'Etna, come si vede da sud, sopra ogni stanza a cielo aperto, e le chiese di Nicolosi disegnate dalle fotografie.",
+    "feat.5t":"Vale la deviazione","feat.5d":"Fichi d'India nascosti in stanze tutte per loro, le cartoline del nonno, i pistacchi per il dolce della zia Pina e un segreto in ogni capitolo.",
+    "feat.6t":"A modo tuo","feat.6d":"In italiano e in inglese, con tastiera o controller, comandi che puoi cambiare e aiuti come le vite infinite.",
+    "tech.solo":"Indie · Sviluppatore singolo",
+    "media.title":"Media","media.lead":"Immagini dal primo capitolo, Nicolosi. Altro in arrivo.",
+    "demo.pill":"● In arrivo","demo.title":"La demo",
+    "demo.p":"La demo contiene tutto il primo capitolo, Nicolosi: dalla strada che entra in paese alle ultime case. La stiamo provando adesso e arriverà presto, per Windows e Linux.",
+    "studio.title":"Lo Studio",
+    "studio.p":"Paw Software Entertainment è uno studio indipendente siciliano. Facciamo giochi con il cuore, un pixel — e una zampa — alla volta.",
+    "studio.also":"Dallo stesso studio:",
+    "footer.made":"Fatto con Godot"
+  }
+};
+const TITLE = {en:"Muntagna — A climb up Mount Etna", it:"Muntagna — Una salita sull'Etna"};
+const els=[...document.querySelectorAll("[data-i18n]")];
+els.forEach(e=>e.dataset.en=e.innerHTML);
+function setLang(l){
+  document.documentElement.lang=l;
+  document.title=TITLE[l]||TITLE.en;
+  els.forEach(e=>{e.innerHTML = l==="en" ? e.dataset.en : (T[l][e.dataset.i18n] ?? e.dataset.en)});
+  document.querySelectorAll(".lang button").forEach(b=>{b.classList.toggle("on",b.dataset.lang===l);b.setAttribute("aria-pressed",b.dataset.lang===l)});
+  try{localStorage.setItem("muntagna-lang",l)}catch(_){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let saved=null; try{saved=localStorage.getItem("muntagna-lang")}catch(_){}
+setLang(saved==="it"||saved==="en" ? saved : ((navigator.language||"").startsWith("it") ? "it" : "en"));
+
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(e=>io.observe(e));
+}else{
+  document.querySelectorAll(".reveal").forEach(e=>e.classList.add("in"));
+}
+</script>
+</body>
+</html>
