@@ -110,11 +110,12 @@
   .shot.px img{image-rendering:pixelated}
   .shot:hover img{transform:scale(1.03)}
 
-  .demo{margin-top:40px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:24px 26px}
+  .demo{margin-top:40px;display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:24px 26px}
   .demo h3{font-family:var(--serif);font-style:italic;font-size:1.5rem;line-height:1.2}
   .demo p{color:var(--muted);font-size:.98rem}
+  .demo .btn{white-space:nowrap}
   .demo .pill{white-space:nowrap;font-size:.8rem;color:var(--gold2);border:1px solid rgba(255,213,138,.4);padding:4px 12px;border-radius:999px}
-  @media(max-width:700px){.demo{grid-template-columns:1fr;gap:10px}.demo .pill{justify-self:start}}
+  @media(max-width:860px){.demo{grid-template-columns:1fr;gap:12px}.demo .pill,.demo .btn{justify-self:start}}
 
   /* STUDIO */
   .studio{text-align:center}
@@ -162,10 +163,11 @@
     <div>
       <p class="tag" data-i18n="hero.tag">A girl, her grandfather's ashes, and a promise: all the way up to the crater.</p>
       <div class="btns">
-        <a class="btn primary" href="#media" data-i18n="hero.cta1">See the game</a>
+        <a class="btn primary" href="https://pawsoftwareent.itch.io/muntagna" target="_blank" rel="noopener" data-i18n="hero.demo">Play the demo</a>
+        <a class="btn" href="#media" data-i18n="hero.cta1">See the game</a>
         <a class="btn" href="https://github.com/PawSoftwareEnt" target="_blank" rel="noopener" data-i18n="hero.cta2">Follow on GitHub</a>
       </div>
-      <div class="status" data-i18n="hero.status">● In development — demo coming soon</div>
+      <div class="status" data-i18n="hero.status">● In development — free demo out now</div>
     </div>
   </div>
 </header>
@@ -252,11 +254,12 @@
       </a>
     </div>
     <div class="demo reveal">
-      <span class="pill" data-i18n="demo.pill">● Coming soon</span>
+      <span class="pill" data-i18n="demo.pill">● Out now</span>
       <div>
         <h3 data-i18n="demo.title">The demo</h3>
-        <p data-i18n="demo.p">The demo holds the whole first chapter, Nicolosi: from the road into town to the last houses. We are testing it now and it will be here soon, for Windows and Linux.</p>
+        <p data-i18n="demo.p">The demo holds the whole first chapter, Nicolosi: from the road into town to the last houses. It is free, for Windows and Linux. Tell us where you stopped: every comment helps.</p>
       </div>
+      <a class="btn primary" href="https://pawsoftwareent.itch.io/muntagna" target="_blank" rel="noopener" data-i18n="demo.cta">Download on itch.io</a>
     </div>
   </div>
 </section>
@@ -287,7 +290,7 @@ const T = {
     "nav.story":"Storia","nav.game":"Il gioco","nav.media":"Media","nav.studio":"Studio",
     "hero.eyebrow":"Paw Software Entertainment presenta","hero.sub":"Una salita sull'Etna",
     "hero.tag":"Una ragazza, le ceneri del nonno e una promessa: fin lassù, al cratere.",
-    "hero.cta1":"Guarda il gioco","hero.cta2":"Seguici su GitHub","hero.status":"● In sviluppo — demo in arrivo",
+    "hero.demo":"Gioca la demo","hero.cta1":"Guarda il gioco","hero.cta2":"Seguici su GitHub","hero.status":"● In sviluppo — demo gratuita disponibile",
     "story.title":"La Storia",
     "story.p1":"Ai suoi piedi nessuno la chiama Etna: è <em>a Muntagna</em>, la Montagna. Agata ha promesso al nonno Turi di portarlo lassù un'ultima volta, fino al cratere. Così parte da Nicolosi, il paese ai suoi piedi, con l'urna nello zaino.",
     "story.p2":"Salendo gli parla. Lungo la strada ci sono le persone che lo conoscevano, i posti dove la portava da bambina, e una montagna più viva che mai.",
@@ -302,8 +305,8 @@ const T = {
     "feat.6t":"A modo tuo","feat.6d":"In italiano e in inglese, con tastiera o controller, comandi che puoi cambiare e aiuti come le vite infinite.",
     "tech.solo":"Indie · Sviluppatore singolo",
     "media.title":"Media","media.lead":"Immagini dal primo capitolo, Nicolosi. Altro in arrivo.",
-    "demo.pill":"● In arrivo","demo.title":"La demo",
-    "demo.p":"La demo contiene tutto il primo capitolo, Nicolosi: dalla strada che entra in paese alle ultime case. La stiamo provando adesso e arriverà presto, per Windows e Linux.",
+    "demo.pill":"● Disponibile","demo.title":"La demo","demo.cta":"Scaricala su itch.io",
+    "demo.p":"La demo contiene tutto il primo capitolo, Nicolosi: dalla strada che entra in paese alle ultime case. È gratuita, per Windows e Linux. Dicci dove ti sei fermato: ogni commento aiuta.",
     "studio.title":"Lo Studio",
     "studio.p":"Paw Software Entertainment è uno studio indipendente siciliano. Facciamo giochi con il cuore, un pixel — e una zampa — alla volta.",
     "studio.also":"Dallo stesso studio:",
