@@ -103,6 +103,8 @@
   .tech{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
   .tech span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.85rem;color:var(--muted)}
 
+  .video{margin-top:36px;aspect-ratio:16/9;border-radius:14px;border:1px solid var(--line);background:var(--card);overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .video iframe{display:block;width:100%;height:100%;border:0}
   .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:36px}
   .shots.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));margin-top:16px}
   .shot{display:block;aspect-ratio:16/9;border-radius:12px;border:1px solid var(--line);background:var(--card);overflow:hidden}
@@ -208,7 +210,8 @@
 <section id="media">
   <div class="wrap">
     <h2 class="reveal" data-i18n="media.title">Media</h2>
-    <p class="lead reveal" data-i18n="media.lead">Screenshots from the first chapter, Nicolosi. More coming soon.</p>
+    <p class="lead reveal" data-i18n="media.lead">The trailer and screenshots from the first chapter, Nicolosi. More coming soon.</p>
+    <div class="video reveal"><iframe src="https://www.youtube-nocookie.com/embed/GhPz3ttJONQ" title="Muntagna — trailer" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     <div class="shots">
       <a class="shot reveal" href="img/nicolosi.webp" target="_blank" rel="noopener">
         <img src="img/nicolosi_960.webp" srcset="img/nicolosi_960.webp 960w, img/nicolosi.webp 1920w" sizes="(max-width: 700px) 100vw, 33vw"
@@ -273,7 +276,6 @@
       <a class="btn primary" href="https://www.youtube.com/@PawSoftwareEnt" target="_blank" rel="noopener">YouTube</a>
       <a class="btn" href="https://github.com/PawSoftwareEnt" target="_blank" rel="noopener">GitHub</a>
     </div>
-    <p class="also"><span data-i18n="studio.also">Also from the studio:</span> <a href="https://pawsoftwareent.github.io/lume/">Lume — The Unlit Lighthouse</a></p>
   </div>
 </section>
 
@@ -304,12 +306,11 @@ const T = {
     "feat.5t":"Vale la deviazione","feat.5d":"Fichi d'India nascosti in stanze tutte per loro, le cartoline del nonno, i pistacchi per il dolce della zia Pina e un segreto in ogni capitolo.",
     "feat.6t":"A modo tuo","feat.6d":"In italiano e in inglese, con tastiera o controller, comandi che puoi cambiare e aiuti come le vite infinite.",
     "tech.solo":"Indie · Sviluppatore singolo",
-    "media.title":"Media","media.lead":"Immagini dal primo capitolo, Nicolosi. Altro in arrivo.",
+    "media.title":"Media","media.lead":"Il trailer e le immagini dal primo capitolo, Nicolosi. Altro in arrivo.",
     "demo.pill":"● Disponibile","demo.title":"La demo","demo.cta":"Giocala su itch.io",
     "demo.p":"La demo contiene tutto il primo capitolo, Nicolosi: dalla strada che entra in paese alle ultime case. È gratuita: giocala nel browser, o scaricala per Windows e Linux. Dicci dove ti sei fermato: ogni commento aiuta.",
     "studio.title":"Lo Studio",
     "studio.p":"Paw Software Entertainment è uno studio indipendente siciliano. Facciamo giochi con il cuore, un foglio di carta — e una zampa — alla volta.",
-    "studio.also":"Dallo stesso studio:",
     "footer.made":"Fatto con Godot"
   }
 };
