@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muntagna — Press kit</title>
+<meta name="description" content="Press kit of Muntagna, a precision platformer about climbing Mount Etna, in cut paper, by Paw Software Entertainment: fact sheet, description, trailer, screenshots and logos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muntagna — Press kit">
+<meta property="og:description" content="Fact sheet, trailer, screenshots and logos of Muntagna, a precision platformer about climbing Mount Etna.">
+<meta property="og:url" content="https://pawsoftwareent.github.io/muntagna/presskit.html">
+<meta property="og:image" content="https://pawsoftwareent.github.io/muntagna/img/preview.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#120d1f">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* the colours, faces and cards of index.html */
+  :root{
+    --bg:#120d1f; --bg2:#181129; --card:#211838; --line:#3a2c5c;
+    --text:#f8eedd; --muted:#b8aacf; --gold:#f0a63c; --gold2:#ffd58a; --red:#dc4631;
+    --serif:Caladea,Cambria,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+  a{color:var(--gold2);text-decoration:none}
+  a:hover{color:#fff}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;border-radius:6px}
+  img{max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(18,13,31,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(58,44,92,.8)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+  .brand{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.35rem;color:var(--text);white-space:nowrap}
+  .brand:hover{color:var(--gold2)}
+  .links{display:flex;gap:22px;align-items:center}
+  .links a{color:var(--muted);font-size:.92rem}
+  .links a:hover{color:var(--text)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+  .lang button{background:none;border:0;color:var(--muted);padding:5px 12px;font:600 .78rem Inter,system-ui,sans-serif;cursor:pointer}
+  .lang button.on{background:var(--gold);color:#22130a}
+  @media(max-width:760px){.links a{display:none}}
+
+  header.top{padding:64px 0 40px;border-bottom:1px solid var(--line);background:
+    linear-gradient(rgba(18,13,31,.55),var(--bg)),url(img/hero_960.webp) center 40%/cover}
+  .eyebrow{color:var(--muted);letter-spacing:.28em;font-size:.76rem;text-transform:uppercase}
+  h1{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(2.8rem,9vw,4.6rem);line-height:1.05;margin:.15em 0 .2em;color:#fff1d6;
+     text-shadow:0 5px 0 rgba(20,10,40,.55)}
+  .tagline{font-size:1.15rem;max-width:640px;color:#efe6f6}
+  .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .btn{display:inline-block;padding:11px 22px;border-radius:999px;font-weight:600;border:1px solid rgba(248,238,221,.35);color:var(--text);background:rgba(18,13,31,.45);transition:transform .15s,background .15s}
+  .btn.primary{background:var(--gold);border-color:var(--gold);color:#22130a}
+  .btn:hover{transform:translateY(-1px);color:var(--text);background:rgba(58,44,92,.7)}
+  .btn.primary:hover{background:var(--gold2);color:#22130a}
+
+  section{padding:64px 0}
+  .alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.7rem,3.8vw,2.3rem);line-height:1.15;margin-bottom:18px}
+  h2::after{content:"";display:block;width:56px;height:3px;border-radius:2px;margin-top:10px;background:var(--gold)}
+  h3{font-size:1.05rem;margin:26px 0 8px}
+  p+p{margin-top:12px}
+  .muted{color:var(--muted)}
+
+  /* fact sheet beside the text */
+  .grid{display:grid;grid-template-columns:330px 1fr;gap:48px;align-items:start}
+  @media(max-width:860px){.grid{grid-template-columns:1fr;gap:32px}}
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+  .facts dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:.93rem}
+  .facts dt{color:var(--muted)}
+  .facts dd{overflow-wrap:anywhere}
+  .text p{max-width:680px}
+  ul.feats{list-style:none;margin-top:6px;max-width:680px}
+  ul.feats li{padding:8px 0 8px 22px;position:relative;border-bottom:1px solid rgba(58,44,92,.6)}
+  ul.feats li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  ul.feats b{color:var(--text)}
+  ul.feats li{color:var(--muted)}
+
+  .video{aspect-ratio:16/9;border-radius:14px;border:1px solid var(--line);background:var(--card);overflow:hidden}
+  .video iframe{display:block;width:100%;height:100%;border:0}
+
+  .shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:22px}
+  .shot{display:block;aspect-ratio:16/9;border-radius:10px;border:1px solid var(--line);background:var(--card);overflow:hidden;position:relative}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover}
+  .shot span{position:absolute;right:8px;bottom:8px;font-size:.72rem;font-weight:600;color:#22130a;background:var(--gold2);border-radius:999px;padding:2px 9px;opacity:0;transition:opacity .15s}
+  .shot:hover span,.shot:focus-visible span{opacity:1}
+  .logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:22px}
+  .logo{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--muted);font-size:.88rem}
+  .logo img{display:block;width:100%;height:150px;object-fit:contain;border-radius:8px;background:#0d0918}
+
+  .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:18px 22px;max-width:760px}
+  .note p{color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.85rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html">Muntagna</a>
+    <div class="links">
+      <a href="#facts" data-i18n="nav.facts">Fact sheet</a>
+      <a href="#trailer" data-i18n="nav.trailer">Trailer</a>
+      <a href="#images" data-i18n="nav.images">Images</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="en" class="on">EN</button><button data-lang="it">IT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="top.eyebrow">Press kit</div>
+    <h1>Muntagna</h1>
+    <p class="tagline" data-i18n="top.tag">A climb up Mount Etna, in cut paper. A girl, her grandfather's ashes, and a promise.</p>
+    <div class="btns">
+      <a class="btn primary" href="press/muntagna-presskit.zip" download data-i18n="top.zip">Download everything (.zip)</a>
+      <a class="btn" href="https://pawsoftwareent.itch.io/muntagna" target="_blank" rel="noopener" data-i18n="top.demo">Play the free demo</a>
+    </div>
+  </div>
+</header>
+
+<section id="facts">
+  <div class="wrap grid">
+    <aside class="facts">
+      <dl>
+        <dt data-i18n="f.dev">Developer</dt><dd>Paw Software Entertainment</dd>
+        <dt data-i18n="f.from">Based in</dt><dd data-i18n="f.fromv">Sicily, Italy</dd>
+        <dt data-i18n="f.team">Team</dt><dd data-i18n="f.teamv">One person</dd>
+        <dt data-i18n="f.genre">Genre</dt><dd data-i18n="f.genrev">2D precision platformer, with a story</dd>
+        <dt data-i18n="f.plat">Platforms</dt><dd data-i18n="f.platv">Windows, Linux, browser (demo)</dd>
+        <dt data-i18n="f.status">Status</dt><dd data-i18n="f.statusv">In development; free demo out now</dd>
+        <dt data-i18n="f.release">Release</dt><dd data-i18n="f.releasev">To be announced</dd>
+        <dt data-i18n="f.lang">Languages</dt><dd data-i18n="f.langv">English, Italian</dd>
+        <dt data-i18n="f.input">Controls</dt><dd data-i18n="f.inputv">Keyboard or controller, remappable</dd>
+        <dt data-i18n="f.engine">Engine</dt><dd>Godot</dd>
+        <dt>Demo</dt><dd><a href="https://pawsoftwareent.itch.io/muntagna" target="_blank" rel="noopener">itch.io</a></dd>
+        <dt data-i18n="f.site">Website</dt><dd><a href="index.html">pawsoftwareent.github.io/muntagna</a></dd>
+        <dt>YouTube</dt><dd><a href="https://www.youtube.com/@PawSoftwareEnt" target="_blank" rel="noopener">@PawSoftwareEnt</a></dd>
+      </dl>
+    </aside>
+    <div class="text">
+      <h2 data-i18n="d.title">About the game</h2>
+      <p data-i18n="d.p1">Muntagna is a precision platformer about a climb up Mount Etna, made of cut paper.</p>
+      <p data-i18n="d.p2">Agata promised her grandfather Turi she would take him all the way up to the crater. Now she carries his ashes in her backpack and his red scarf round her neck, and she sets off from Nicolosi, the town at the foot of the Mountain where the climb begins.</p>
+      <p data-i18n="d.p3">The free demo is the whole first chapter: the town, from its square to its rooftops.</p>
+      <h3 data-i18n="d.feats">What makes it its own</h3>
+      <ul class="feats">
+        <li data-i18n="d.f1"><b>A wingbeat, not a dash:</b> a blue rock thrush rides on her backpack and gives her one push in the air.</li>
+        <li data-i18n="d.f2"><b>Walls you slide down, not climb:</b> kick off them to go up.</li>
+        <li data-i18n="d.f3"><b>The red scarf</b> swings her from the iron rings of the old mule tracks.</li>
+        <li data-i18n="d.f4"><b>Grandpa's walking stick</b> bounces her off prickly pear pads.</li>
+        <li data-i18n="d.f5"><b>Sicily, not a fantasy land:</b> a real town under a real volcano, a dog on its chain, wheels of fire.</li>
+        <li data-i18n="d.f6"><b>One room, one idea:</b> when you fall, you are back at once.</li>
+        <li data-i18n="d.f7"><b>Off the way:</b> prickly pears, postcards, pistachios and a secret.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="trailer" class="alt">
+  <div class="wrap">
+    <h2 data-i18n="t.title">Trailer</h2>
+    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/r__SW06NZaI" title="Muntagna — trailer" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <p class="muted" style="margin-top:12px"><a href="https://www.youtube.com/watch?v=r__SW06NZaI" target="_blank" rel="noopener">youtube.com/watch?v=r__SW06NZaI</a></p>
+  </div>
+</section>
+
+<section id="images">
+  <div class="wrap">
+    <h2 data-i18n="i.title">Screenshots</h2>
+    <p class="muted" data-i18n="i.lead">From the first chapter, 1920 × 1080, free to use in articles and videos about the game. Click one to download it, or get them all in the zip.</p>
+    <!-- No data-i18n on the pictures: switching language rewrites those elements. -->
+    <div class="shots">
+      <a class="shot" href="press/muntagna_01_nicolosi.jpg" download><img src="img/nicolosi_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="The square of Nicolosi in cut paper, its yellow church and Mount Etna over the roofs."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_02_scatto.jpg" download><img src="img/scatto_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Agata swings from an old iron ring with her red scarf, between two house fronts."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_03_chiesa.jpg" download><img src="img/chiesa_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="A church with its bell tower, the priest at its door and the Mountain behind."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_04_cava.jpg" download><img src="img/cava_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="A yard with a dog on its chain under tall house fronts."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_05_faville.jpg" download><img src="img/faville_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Agata bounces on a prickly pear pad with her grandfather's walking stick."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_06_boss.jpg" download><img src="img/boss_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Over the roofs at night, Agata throws her scarf at the town's fire sprite."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_07_piazza.jpg" download><img src="img/piazza_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="A small pink church on a stair of lava stone, Mount Etna in the evening."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_08_dialogo.jpg" download><img src="img/dialogo.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Agata speaks to her grandfather at the gates of Nicolosi."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_09.jpg" download><img src="press/muntagna_09_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="The yellow church of the square at night, Agata running past it."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_10.jpg" download><img src="press/muntagna_10_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Agata swings between two rings across tall house fronts."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_11.jpg" download><img src="press/muntagna_11_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="A swing from a ring between two houses, a wheel of fire turning above."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_12.jpg" download><img src="press/muntagna_12_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="A swing over a wire at night, Mount Etna behind and fire below."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_13.jpg" download><img src="press/muntagna_13_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Agata slides down a wall in a narrow lane, the dog below."><span>JPG</span></a>
+      <a class="shot" href="press/muntagna_14.jpg" download><img src="press/muntagna_14_960.webp" width="960" height="540" loading="lazy" decoding="async" alt="Up a shaft between the houses, from a ring to the rooftops."><span>JPG</span></a>
+    </div>
+
+    <h3 data-i18n="i.logos">Key art and logos</h3>
+    <div class="logos">
+      <a class="logo" href="press/muntagna_banner.png" download><img src="press/muntagna_banner.png" loading="lazy" decoding="async" alt="Muntagna banner with the game's name"><span data-i18n="i.banner">Banner with the name, 1920 × 600 (PNG)</span></a>
+      <a class="logo" href="press/muntagna_cover.png" download><img src="press/muntagna_cover.png" loading="lazy" decoding="async" alt="Muntagna cover image"><span data-i18n="i.cover">Cover, 630 × 500 (PNG)</span></a>
+      <a class="logo" href="press/paw_software_logo.png" download><img src="press/paw_software_logo.png" loading="lazy" decoding="async" alt="Paw Software Entertainment logo"><span data-i18n="i.studio">Studio logo (PNG)</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <h2 data-i18n="c.title">Notes and contact</h2>
+    <div class="note">
+      <p data-i18n="c.ai">Muntagna uses AI-generated content.</p>
+    </div>
+    <p class="muted" style="margin-top:22px;max-width:680px" data-i18n="c.contact">For keys, interviews or anything else, write to Paw Software Entertainment through the itch.io page or the YouTube channel. Videos and streams of the demo are welcome, no need to ask.</p>
+    <div class="btns">
+      <a class="btn primary" href="https://pawsoftwareent.itch.io/muntagna" target="_blank" rel="noopener">itch.io</a>
+      <a class="btn" href="https://www.youtube.com/@PawSoftwareEnt" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Paw Software Entertainment</span>
+    <a href="index.html" data-i18n="footer.back">Back to the game's page</a>
+  </div>
+</footer>
+
+<script>
+const T = {
+  it: {
+    "nav.facts":"Scheda","nav.trailer":"Trailer","nav.images":"Immagini","nav.contact":"Contatti",
+    "top.eyebrow":"Press kit","top.tag":"Una salita all'Etna, in carta ritagliata. Una ragazza, le ceneri del nonno e una promessa.",
+    "top.zip":"Scarica tutto (.zip)","top.demo":"Gioca la demo gratuita",
+    "f.dev":"Sviluppatore","f.from":"Sede","f.fromv":"Sicilia, Italia","f.team":"Squadra","f.teamv":"Una persona",
+    "f.genre":"Genere","f.genrev":"Platform di precisione 2D, con una storia","f.plat":"Piattaforme","f.platv":"Windows, Linux, browser (demo)",
+    "f.status":"Stato","f.statusv":"In sviluppo; demo gratuita disponibile","f.release":"Uscita","f.releasev":"Da annunciare",
+    "f.lang":"Lingue","f.langv":"Italiano, inglese","f.input":"Comandi","f.inputv":"Tastiera o controller, personalizzabili","f.engine":"Motore","f.site":"Sito",
+    "d.title":"Il gioco",
+    "d.p1":"Muntagna è un platform di precisione su una salita all'Etna, fatto di carta ritagliata.",
+    "d.p2":"Agata ha promesso al nonno Turi di portarlo fino al cratere. Ora porta le sue ceneri nello zaino e la sua sciarpa rossa al collo, e parte da Nicolosi, il paese ai piedi della Montagna dove la salita comincia.",
+    "d.p3":"La demo gratuita è tutto il primo capitolo: il paese, dalla piazza ai tetti.",
+    "d.feats":"Cosa ha di suo",
+    "d.f1":"<b>Un colpo d'ali, non uno scatto:</b> un passero solitario si posa sullo zaino e le dà una spinta in aria.",
+    "d.f2":"<b>Muri su cui si scivola, non ci si arrampica:</b> ci si spinge via per salire.",
+    "d.f3":"<b>La sciarpa rossa</b> la fa dondolare dagli anelli di ferro delle vecchie mulattiere.",
+    "d.f4":"<b>Il bastone del nonno</b> la fa rimbalzare sulle pale di fico d'India.",
+    "d.f5":"<b>La Sicilia, non un mondo inventato:</b> un paese vero sotto un vulcano vero, un cane alla catena, ruote di fuoco.",
+    "d.f6":"<b>Una stanza, un'idea:</b> quando cadi, riparti subito.",
+    "d.f7":"<b>Fuori strada:</b> fichi d'India, cartoline, pistacchi e un segreto.",
+    "t.title":"Trailer",
+    "i.title":"Immagini","i.lead":"Dal primo capitolo, 1920 × 1080, libere da usare in articoli e video sul gioco. Clicca un'immagine per scaricarla, o prendile tutte nello zip.",
+    "i.logos":"Immagini e loghi","i.banner":"Banner con il nome, 1920 × 600 (PNG)","i.cover":"Copertina, 630 × 500 (PNG)","i.studio":"Logo dello studio (PNG)",
+    "c.title":"Note e contatti",
+    "c.ai":"Muntagna usa contenuti generati con l'IA.",
+    "c.contact":"Per chiavi, interviste o altro, scrivi a Paw Software Entertainment dalla pagina itch.io o dal canale YouTube. Video e dirette della demo sono benvenuti, non serve chiedere.",
+    "footer.back":"Torna alla pagina del gioco"
+  }
+};
+const TITLE = {en:"Muntagna — Press kit", it:"Muntagna — Press kit"};
+const els=[...document.querySelectorAll("[data-i18n]")];
+els.forEach(e=>e.dataset.en=e.innerHTML);
+function setLang(l){
+  document.documentElement.lang=l;
+  document.title=TITLE[l]||TITLE.en;
+  els.forEach(e=>{e.innerHTML = l==="en" ? e.dataset.en : (T[l][e.dataset.i18n] ?? e.dataset.en)});
+  document.querySelectorAll(".lang button").forEach(b=>{b.classList.toggle("on",b.dataset.lang===l);b.setAttribute("aria-pressed",b.dataset.lang===l)});
+  try{localStorage.setItem("muntagna-lang",l)}catch(_){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+let saved=null; try{saved=localStorage.getItem("muntagna-lang")}catch(_){}
+setLang(saved==="it"||saved==="en" ? saved : ((navigator.language||"").startsWith("it") ? "it" : "en"));
+</script>
+</body>
+</html>
