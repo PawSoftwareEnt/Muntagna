@@ -90,6 +90,12 @@
   .logo{display:flex;flex-direction:column;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--muted);font-size:.88rem}
   .logo img{display:block;width:100%;height:150px;object-fit:contain;border-radius:8px;background:#0d0918}
 
+  .clips{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  @media(max-width:700px){.clips{grid-template-columns:1fr}}
+  .clip{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .clip video{display:block;width:100%;aspect-ratio:16/9;background:#0d0918}
+  .clip div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;font-size:.88rem;color:var(--muted)}
+  .clip div a{font-weight:600}
   .note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:18px 22px;max-width:760px}
   .note p{color:var(--muted)}
 
@@ -105,6 +111,7 @@
     <div class="links">
       <a href="#facts" data-i18n="nav.facts">Fact sheet</a>
       <a href="#trailer" data-i18n="nav.trailer">Trailer</a>
+      <a href="#gifs" data-i18n="nav.gifs">GIFs</a>
       <a href="#images" data-i18n="nav.images">Images</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
       <div class="lang" role="group" aria-label="Language">
@@ -172,7 +179,24 @@
   </div>
 </section>
 
-<section id="images">
+<section id="gifs">
+  <div class="wrap">
+    <h2 data-i18n="g.title">GIFs and clips</h2>
+    <p class="muted" data-i18n="g.lead">A few seconds of each move, following Agata: GIF (576 × 324) or MP4 (1280 × 720, no sound).</p>
+    <div class="clips">
+      <figure class="clip"><video src="press/muntagna_wingbeat.mp4" poster="press/muntagna_wingbeat_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <div><span data-i18n="g.wing">The wingbeat</span><span><a href="press/muntagna_wingbeat.gif" download>GIF</a> · <a href="press/muntagna_wingbeat.mp4" download>MP4</a></span></div></figure>
+      <figure class="clip"><video src="press/muntagna_rings.mp4" poster="press/muntagna_rings_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <div><span data-i18n="g.rings">The scarf on the rings</span><span><a href="press/muntagna_rings.gif" download>GIF</a> · <a href="press/muntagna_rings.mp4" download>MP4</a></span></div></figure>
+      <figure class="clip"><video src="press/muntagna_stick.mp4" poster="press/muntagna_stick_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <div><span data-i18n="g.stick">Grandpa's stick</span><span><a href="press/muntagna_stick.gif" download>GIF</a> · <a href="press/muntagna_stick.mp4" download>MP4</a></span></div></figure>
+      <figure class="clip"><video src="press/muntagna_chain.mp4" poster="press/muntagna_chain_poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <div><span data-i18n="g.chain">All three, up a shaft</span><span><a href="press/muntagna_chain.gif" download>GIF</a> · <a href="press/muntagna_chain.mp4" download>MP4</a></span></div></figure>
+    </div>
+  </div>
+</section>
+
+<section id="images" class="alt">
   <div class="wrap">
     <h2 data-i18n="i.title">Screenshots</h2>
     <p class="muted" data-i18n="i.lead">From the first chapter, 1920 × 1080, free to use in articles and videos about the game. Click one to download it, or get them all in the zip.</p>
@@ -203,7 +227,7 @@
   </div>
 </section>
 
-<section id="contact" class="alt">
+<section id="contact">
   <div class="wrap">
     <h2 data-i18n="c.title">Notes and contact</h2>
     <div class="note">
@@ -247,6 +271,8 @@ const T = {
     "d.f6":"<b>Una stanza, un'idea:</b> quando cadi, riparti subito.",
     "d.f7":"<b>Fuori strada:</b> fichi d'India, cartoline, pistacchi e un segreto.",
     "t.title":"Trailer",
+    "nav.gifs":"GIF","g.title":"GIF e clip","g.lead":"Qualche secondo per ogni mossa, seguendo Agata: GIF (576 × 324) o MP4 (1280 × 720, senza audio).",
+    "g.wing":"Il colpo d'ali","g.rings":"La sciarpa sugli anelli","g.stick":"Il bastone del nonno","g.chain":"Tutte e tre, su per un pozzo",
     "i.title":"Immagini","i.lead":"Dal primo capitolo, 1920 × 1080, libere da usare in articoli e video sul gioco. Clicca un'immagine per scaricarla, o prendile tutte nello zip.",
     "i.logos":"Immagini e loghi","i.banner":"Banner con il nome, 1920 × 600 (PNG)","i.cover":"Copertina, 630 × 500 (PNG)","i.studio":"Logo dello studio (PNG)",
     "c.title":"Note e contatti",
